@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-const logger = require('./logger')
-const authorize = require('./authorize')
+const logger = require('logger')
+const authorize = require('authorize')
 //  req => middleware => res
 
 // app.use([logger, authorize])
@@ -20,6 +20,7 @@ app.get('/api/products', (req, res) => {
 })
 app.get('/api/items', (req, res) => {
   console.log(req.user)
+  console.log(morgan.tiny,"heyshs")
   res.send('Items')
 })
 
